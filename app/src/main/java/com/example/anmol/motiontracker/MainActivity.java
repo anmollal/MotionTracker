@@ -11,15 +11,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     List<ScreenLoc> swipe;
+    String[] states = {"Right Thumb", "Left Thumb", "Any Finger"};
+    String currentState;
+    Random rand = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        genState();
     }
 
     @Override
@@ -40,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException e) {
                 Log.d("error", e.getMessage());
             }
+            genState();
         }
         return true;
     }
@@ -55,11 +61,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String swipeString(List<ScreenLoc> list) {
-        String str = "";
+        String str = currentState;
         for (int i = 0; i < list.size(); i++) {
-            str = str + String.format(Locale.US, "(%.3f:%.3f),", list.get(i).x, list.get(i).y);
+            str = str + String.format(Locale.US, ",(%.3f:%.3f)", list.get(i).x, list.get(i).y);
         }
         Log.i("String", str);
         return str + "\n";
+    }
+
+    /**
+     * This will generate a state
+     * @return the generated state
+     */
+    private void genState() {
+        currentState = states[rand.nextInt(3)];
+        // Put your UI display code here
     }
 }
