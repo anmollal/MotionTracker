@@ -1,8 +1,10 @@
 package com.example.anmol.motiontracker;
 
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.MotionEvent;
 
 import java.io.File;
@@ -18,12 +20,22 @@ public class MainActivity extends AppCompatActivity {
     List<ScreenLoc> swipe;
     String[] states = {"Right Thumb", "Left Thumb", "Any Finger"};
     String currentState;
-    Random rand = new Random();
+    Random rand;
+    Display display;
+    Point size;
+    float height;
+    long startTime;
+    long endTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        rand = new Random();
+        display = getWindowManager().getDefaultDisplay();
+        size = new Point();
+        display.getSize(size);
+        height = (float) size.y;
         genState();
     }
 
@@ -31,10 +43,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             swipe = new ArrayList<>();
+            startTime = System.currentTimeMillis();
         }
         Log.i("X, Y", Float.toString(ev.getX(0)) + " , " + Float.toString(ev.getY(0)));
-        swipe.add(new ScreenLoc(ev.getX(0), ev.getY(0)));
+        swipe.add(new ScreenLoc(ev.getX(0), height - ev.getY(0)));
         if (ev.getAction() == MotionEvent.ACTION_UP) {
+            endTime = System.currentTimeMillis();
             File file = new File(this.getExternalFilesDir("SwipeData"), "SwipeData.csv");
             try {
                 file.createNewFile();
@@ -61,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String swipeString(List<ScreenLoc> list) {
-        String str = currentState;
+        String str = String.format("%s, %s", currentState, Long.toString(endTime - startTime));
         for (int i = 0; i < list.size(); i++) {
             str = str + String.format(Locale.US, ",(%.3f:%.3f)", list.get(i).x, list.get(i).y);
         }
