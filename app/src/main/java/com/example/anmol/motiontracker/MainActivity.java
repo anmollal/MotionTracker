@@ -1,11 +1,16 @@
 package com.example.anmol.motiontracker;
 
+import android.content.Intent;
 import android.graphics.Point;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -15,7 +20,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     List<ScreenLoc> swipe;
     String[] states = {"Right Thumb", "Left Thumb", "Any Finger"};
@@ -37,10 +42,19 @@ public class MainActivity extends AppCompatActivity {
         display.getSize(size);
         height = (float) size.y;
         genState();
+
+        Button button = (Button) findViewById(R.id.home_screen_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, rightThumbActivity.class));
+            }
+        });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.ECLAIR)
     @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
+    public boolean onTouchEvent(MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             swipe = new ArrayList<>();
             startTime = System.currentTimeMillis();
@@ -61,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
             genState();
         }
-        return true;
+        return false;
     }
 
     private class ScreenLoc {

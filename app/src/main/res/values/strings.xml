@@ -1,3 +1,7 @@
 <resources>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="splash_screen_tagline">Data Collection</string>
+    <string name="splash_screen_title">Handwich </string>
+    <string name="title_activity_right_thumb_swipe">RightThumbSwipeActivity</string>
     <string name="app_name">Swipe to Unlock</string>
 </resources>
