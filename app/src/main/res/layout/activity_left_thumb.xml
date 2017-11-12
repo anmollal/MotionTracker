@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.example.anmol.motiontracker.LeftThumbActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:text="Please swipe 10 times with your left thumb."
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:id="@+id/lthumb_textview"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="290dp"
+            android:layout_below="@id/lthumb_textview"
+            android:id="@+id/lthumb_btn"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

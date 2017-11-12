@@ -16,6 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".RightThumbActivity"
+            android:label="@string/title_activity_right_thumb"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RightIndexActivity"
+            android:label="@string/title_activity_right_index"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LeftThumbActivity"
+            android:label="@string/title_activity_left_thumb"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LeftIndexActivity"
+            android:label="@string/title_activity_left_index"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FinalActivity"
+            android:label="@string/title_activity_final"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
