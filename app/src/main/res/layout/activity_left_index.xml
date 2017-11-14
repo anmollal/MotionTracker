@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="80dp"
-            android:text="Please swipe 10 times with your left index finger."
+            android:text="Please swipe 10 times with your index finger."
             android:textSize="30dp"
             android:textAlignment="center"
             android:id="@+id/lindex_textview"/>

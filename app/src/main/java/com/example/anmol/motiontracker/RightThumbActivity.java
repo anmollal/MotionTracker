@@ -40,7 +40,7 @@ public class RightThumbActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
-                startActivity(new Intent(RightThumbActivity.this, RightIndexActivity.class));
+                startActivity(new Intent(RightThumbActivity.this, LeftThumbActivity.class));
             }
         });
         // rand = new Random();
