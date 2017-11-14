@@ -4,4 +4,13 @@
     <string name="splash_screen_title">Handwich </string>
     <string name="title_activity_right_thumb_swipe">RightThumbSwipeActivity</string>
     <string name="app_name">Swipe to Unlock</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_swipe">SwipeActivity</string>
+    <string name="title_activity_right_thumb">RightThumbActivity</string>
+    <string name="title_activity_right_index">RightIndexActivity</string>
+    <string name="title_activity_left_thumb">LeftThumbActivity</string>
+    <string name="title_activity_left_index">LeftIndexActivity</string>
+    <string name="title_activity_final">FinalActivity</string>
 </resources>

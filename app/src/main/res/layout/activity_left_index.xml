@@ -8,25 +8,25 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.example.anmol.motiontracker.RightThumbActivity">
+        tools:context="com.example.anmol.motiontracker.LeftIndexActivity">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="80dp"
-            android:text="Please swipe 10 times with your right thumb."
+            android:text="Please swipe 10 times with your index finger."
             android:textSize="30dp"
             android:textAlignment="center"
-            android:id="@+id/rthumb_textview"/>
+            android:id="@+id/lindex_textview"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Continue"
             android:layout_marginTop="400dp"
             android:layout_marginLeft="290dp"
-            android:layout_below="@id/rthumb_textview"
-            android:id="@+id/rthumb_btn"/>
+            android:layout_below="@id/lindex_textview"
+            android:id="@+id/lindex_btn"/>
 
     </RelativeLayout>
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.anmol.motiontracker">
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:label="Handwich">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,10 +18,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".rightThumbActivity"
-            android:label ="Handwich"
-            >
-        </activity>
+            android:name=".RightThumbActivity"
+            android:label="@string/title_activity_right_thumb"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RightIndexActivity"
+            android:label="@string/title_activity_right_index"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LeftThumbActivity"
+            android:label="@string/title_activity_left_thumb"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LeftIndexActivity"
+            android:label="@string/title_activity_left_index"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FinalActivity"
+            android:label="@string/title_activity_final"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
